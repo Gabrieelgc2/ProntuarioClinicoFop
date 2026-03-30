@@ -2,7 +2,7 @@ function validarCPF(cpf: string): boolean {
   // 1. Limpeza e Verificação Básica
   const cpfLimpo = cpf.replace(/\D/g, ''); // Remove tudo que não é número  
 
-  if (cpfLimpo.length !== 11) return false;
+  if ( cpfLimpo.length !== 11 ) return false;
 
   // 2. Bloqueio de números repetidos (Ex: 111.111.111-11)
   if (/^(\d)\1{10}$/.test(cpfLimpo)) return false;
@@ -28,7 +28,4 @@ function validarCPF(cpf: string): boolean {
 
   return true;
 }
-
-// Exemplo de uso:
-console.log(validarCPF("529.982.247-25")); // true
-console.log(validarCPF("11111111111"));    // false
+export default validarCPF;
